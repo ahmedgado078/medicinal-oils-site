@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Noura Essence | Medicinal & Essential Oils</title>
+    <meta
+      name="description"
+      content="Informational website for a medicinal and essential oils company, featuring founder story, mission, and quality standards."
+    />
+    <style>
+      :root {
+        --bg: #f5f3ec;
+        --panel: rgba(255, 255, 255, 0.7);
+        --panel-strong: #fffdf8;
+        --primary: #2f6f52;
+        --primary-dark: #1d4737;
+        --accent: #d9b76d;
+        --accent-soft: #f1e2b8;
+        --text: #1d2f2b;
+        --muted: #5d6c67;
+        --border: rgba(34, 62, 52, 0.12);
+        --shadow: 0 24px 60px rgba(27, 44, 38, 0.12);
+        --radius: 24px;
+      }
+
+      * { box-sizing: border-box; }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+        background:
+          radial-gradient(circle at top left, rgba(217, 183, 109, 0.18), transparent 28%),
+          radial-gradient(circle at bottom right, rgba(47, 111, 82, 0.14), transparent 26%),
+          var(--bg);
+        color: var(--text);
+        line-height: 1.7;
+        transition: background 0.25s ease;
+      }
+
+      body.rtl {
+        direction: rtl;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .container {
+        width: min(1200px, calc(100% - 40px));
+        margin: 0 auto;
+      }
+
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        backdrop-filter: blur(18px);
+        background: rgba(245, 243, 236, 0.72);
+        border-bottom: 1px solid rgba(29, 47, 43, 0.06);
+      }
+
+      .topbar-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 22px;
+        min-height: 82px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+
+      .brand-mark {
+        width: 46px;
+        height: 46px;
+        border-radius: 14px;
+        display: grid;
+        place-items: center;
+        background: linear-gradient(135deg, var(--primary), #6aa86c);
+        color: #fff;
+        font-weight: 800;
+        font-size: 1.15rem;
+        box-shadow: 0 18px 30px rgba(47, 111, 82, 0.22);
+      }
+
+      .brand-copy {
+        display: flex;
+        flex-direction: column;
+        line-height: 1.2;
+      }
+
+      .brand-name {
+        font-size: 1.25rem;
+        font-weight: 700;
+      }
+
+      .brand-tag {
+        font-size: 0.74rem;
+        color: var(--muted);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        color: var(--muted);
+        font-weight: 500;
+      }
+
+      .nav a {
+        transition: color 0.2s ease;
+      }
+
+      .nav a:hover {
+        color: var(--primary-dark);
+      }
+
+      .lang-toggle {
+        border: 1px solid rgba(47, 111, 82, 0.2);
+        background: rgba(255, 255, 255, 0.62);
+        color: var(--primary-dark);
+        border-radius: 999px;
+        font-weight: 700;
+        font-size: 0.95rem;
+        padding: 0.8rem 1.1rem;
+        cursor: pointer;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .lang-toggle:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 8px 18px rgba(47, 111, 82, 0.12);
+      }
+
+      .hero {
+        padding: 4.4rem 0 3rem;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        align-items: center;
+        gap: 36px;
+      }
+
+      .eyebrow {
+        display: inline-block;
+        padding: 0.55rem 0.85rem;
+        border-radius: 999px;
+        background: rgba(217, 183, 109, 0.16);
+        color: var(--primary-dark);
+        font-weight: 700;
+        font-size: 0.8rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 1.3rem 0 1rem;
+        font-size: clamp(2.5rem, 5vw, 4.5rem);
+        line-height: 1.08;
+        letter-spacing: -0.05em;
+      }
+
+      .lead {
+        max-width: 620px;
+        font-size: 1.08rem;
+        color: var(--muted);
+      }
+
+      .cta-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        margin-top: 2rem;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 180px;
+        padding: 1rem 1.35rem;
+        border-radius: 14px;
+        font-weight: 700;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .button:hover {
+        transform: translateY(-2px);
+      }
+
+      .button.primary {
+        background: linear-gradient(135deg, var(--primary), #3c8a68);
+        color: white;
+        box-shadow: 0 18px 30px rgba(47, 111, 82, 0.2);
+      }
+
+      .button.secondary {
+        background: rgba(255, 255, 255, 0.7);
+        border: 1px solid var(--border);
+      }
+
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(120px, 1fr));
+        gap: 12px;
+        margin-top: 2.3rem;
+      }
+
+      .stat-card {
+        background: rgba(255, 255, 255, 0.55);
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        padding: 1rem 1rem 0.9rem;
+        box-shadow: 0 12px 30px rgba(28, 44, 39, 0.04);
+      }
+
+      .stat-card strong {
+        display: block;
+        font-size: 1.5rem;
+        color: var(--primary-dark);
+      }
+
+      .stat-card span {
+        font-size: 0.9rem;
+        color: var(--muted);
+      }
+
+      .visual-wrap {
+        position: relative;
+        display: flex;
+        justify-content: center;
+      }
+
+      .visual-card {
+        position: relative;
+        width: min(440px, 100%);
+        min-height: 520px;
+        border-radius: 32px;
+        background: linear-gradient(160deg, rgba(255,255,255,0.85), rgba(233,239,234,0.92));
+        border: 1px solid rgba(30, 47, 43, 0.08);
+        box-shadow: var(--shadow);
+        overflow: hidden;
+      }
+
+      .visual-card::before {
+        content: "";
+        position: absolute;
+        inset: 28px 28px auto auto;
+        width: 130px;
+        height: 130px;
+        border-radius: 50%;
+        background: rgba(217, 183, 109, 0.22);
+        filter: blur(2px);
+      }
+
+      .leaf-shape {
+        position: absolute;
+        right: 54px;
+        bottom: 86px;
+        width: 220px;
+        height: 260px;
+        background: linear-gradient(135deg, rgba(94, 146, 92, 0.85), rgba(41, 99, 72, 0.9));
+        border-radius: 65% 35% 42% 58% / 54% 63% 37% 46%;
+        transform: rotate(-25deg);
+        box-shadow: inset -18px -20px 30px rgba(22, 52, 39, 0.16), 0 26px 42px rgba(43, 88, 63, 0.2);
+      }
+
+      .leaf-shape::before,
+      .leaf-shape::after {
+        content: "";
+        position: absolute;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 100%;
+      }
+
+      .leaf-shape::before {
+        left: 38%;
+        top: 18%;
+        width: 18px;
+        height: 180px;
+        transform: rotate(15deg);
+      }
+
+      .leaf-shape::after {
+        left: 52%;
+        top: 22%;
+        width: 18px;
+        height: 140px;
+        transform: rotate(-20deg);
+      }
+
+      .floating-panel {
+        position: absolute;
+        left: 28px;
+        right: 28px;
+        bottom: 26px;
+        background: rgba(255, 255, 255, 0.78);
+        border: 1px solid rgba(29, 47, 43, 0.08);
+        border-radius: 22px;
+        padding: 1.2rem 1.1rem;
+        box-shadow: 0 18px 32px rgba(29, 47, 43, 0.12);
+      }
+
+      .floating-panel strong {
+        display: block;
+        font-size: 1.15rem;
+      }
+
+      .floating-panel small {
+        display: block;
+        margin-top: 0.3rem;
+        color: var(--muted);
+      }
+
+      .section {
+        padding: 2.5rem 0;
+      }
+
+      .section-head {
+        text-align: center;
+        max-width: 660px;
+        margin: 0 auto 2rem;
+      }
+
+      .section-head h2 {
+        margin: 0.8rem 0 0.7rem;
+        font-size: clamp(2rem, 4vw, 3rem);
+        letter-spacing: -0.04em;
+      }
+
+      .section-head p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 20px;
+      }
+
+      .feature-card {
+        background: rgba(255, 255, 255, 0.64);
+        border: 1px solid var(--border);
+        border-radius: 22px;
+        padding: 1.7rem 1.4rem;
+        box-shadow: 0 18px 30px rgba(24, 39, 34, 0.04);
+      }
+
+      .feature-icon {
+        width: 54px;
+        height: 54px;
+        border-radius: 16px;
+        display: grid;
+        place-items: center;
+        background: linear-gradient(135deg, rgba(47,111,82,0.12), rgba(217,183,109,0.2));
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .feature-card h3 {
+        margin: 0 0 0.7rem;
+        font-size: 1.35rem;
+      }
+
+      .feature-card p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .story {
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 28px;
+        align-items: center;
+      }
+
+      .portrait-box {
+        background: linear-gradient(180deg, rgba(255,255,255,0.8), rgba(236,239,232,0.95));
+        border: 1px solid var(--border);
+        border-radius: 28px;
+        padding: 1.6rem;
+        min-height: 420px;
+        box-shadow: var(--shadow);
+      }
+
+      .portrait-circle {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        margin: 0 auto 1.25rem;
+        display: grid;
+        place-items: center;
+        background: linear-gradient(135deg, var(--primary), #7aa77d);
+        color: #fff;
+        font-size: 3.25rem;
+        font-weight: 700;
+      }
+
+      .portrait-box h3 {
+        text-align: center;
+        margin: 0.2rem 0 0.4rem;
+        font-size: 1.7rem;
+      }
+
+      .portrait-box p {
+        text-align: center;
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .story-copy {
+        padding: 0.5rem 0;
+      }
+
+      .story-copy h2 {
+        margin: 0.9rem 0 1rem;
+        font-size: clamp(2rem, 3vw, 2.8rem);
+        letter-spacing: -0.04em;
+      }
+
+      .story-copy p {
+        margin: 0 0 1rem;
+        color: var(--muted);
+        font-size: 1.05rem;
+      }
+
+      .quote {
+        margin-top: 1.3rem;
+        background: rgba(255,255,255,0.72);
+        border-left: 4px solid var(--accent);
+        border-radius: 16px;
+        padding: 1.2rem 1.1rem;
+        color: var(--primary-dark);
+        font-weight: 600;
+        font-size: 1.05rem;
+      }
+
+      .values {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .value-item {
+        background: rgba(255,255,255,0.72);
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        padding: 1.4rem 1.2rem;
+      }
+
+      .value-item .num {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        border-radius: 12px;
+        background: rgba(47,111,82,0.1);
+        color: var(--primary-dark);
+        font-weight: 800;
+        line-height: 40px;
+        text-align: center;
+        margin-bottom: 0.8rem;
+      }
+
+      .value-item h3 {
+        margin: 0 0 0.55rem;
+        font-size: 1.1rem;
+      }
+
+      .value-item p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.96rem;
+      }
+
+      .cta-banner {
+        background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+        color: white;
+        border-radius: 30px;
+        padding: 2rem 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 22px;
+        box-shadow: 0 22px 45px rgba(29, 71, 55, 0.25);
+      }
+
+      .cta-banner h3 {
+        margin: 0 0 0.35rem;
+        font-size: clamp(1.7rem, 3vw, 2.5rem);
+      }
+
+      .cta-banner p {
+        margin: 0;
+        color: rgba(255,255,255,0.8);
+      }
+
+      .cta-banner .button.secondary {
+        background: rgba(255,255,255,0.12);
+        color: #fff;
+        border-color: rgba(255,255,255,0.25);
+      }
+
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 22px;
+      }
+
+      .contact-panel,
+      .contact-card {
+        background: rgba(255,255,255,0.64);
+        border: 1px solid var(--border);
+        border-radius: 22px;
+        padding: 1.8rem 1.5rem;
+      }
+
+      .contact-panel h3,
+      .contact-card h3 {
+        margin-top: 0;
+        font-size: 1.75rem;
+      }
+
+      .contact-panel p,
+      .contact-card p,
+      .contact-card li {
+        color: var(--muted);
+      }
+
+      .contact-list {
+        display: grid;
+        gap: 1rem;
+        list-style: none;
+        padding: 0;
+        margin: 1.3rem 0 0;
+      }
+
+      .contact-list li {
+        display: flex;
+        gap: 0.85rem;
+        align-items: flex-start;
+      }
+
+      .contact-tag {
+        width: 38px;
+        height: 38px;
+        border-radius: 12px;
+        display: grid;
+        place-items: center;
+        background: rgba(47, 111, 82, 0.08);
+        color: var(--primary-dark);
+        font-weight: 800;
+      }
+
+      .footer {
+        padding: 2rem 0 3rem;
+        color: var(--muted);
+      }
+
+      .footer-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 18px;
+        border-top: 1px solid rgba(29, 47, 43, 0.08);
+        padding-top: 1.4rem;
+      }
+
+      @media (max-width: 900px) {
+        .nav {
+          display: none;
+        }
+
+        .hero-grid,
+        .story,
+        .feature-grid,
+        .values,
+        .contact-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .cta-banner {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+
+      @media (max-width: 560px) {
+        .topbar-inner {
+          min-height: 74px;
+        }
+
+        .brand-name {
+          font-size: 1.05rem;
+        }
+
+        .brand-tag {
+          letter-spacing: 0.04em;
+        }
+
+        .stats {
+          grid-template-columns: 1fr;
+        }
+
+        .cta-row {
+          flex-direction: column;
+        }
+
+        .button {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <div class="brand">
+          <div class="brand-mark">N</div>
+          <div class="brand-copy">
+            <span class="brand-name" data-i18n="brandName">Noura Essence</span>
+            <span class="brand-tag" data-i18n="brandTag">Medicinal &amp; Essential Oils</span>
+          </div>
+        </div>
+
+        <nav class="nav" aria-label="Main navigation">
+          <a href="#about" data-i18n="navAbout">About</a>
+          <a href="#founder" data-i18n="navFounder">Founder</a>
+          <a href="#quality" data-i18n="navQuality">Quality</a>
+          <a href="#contact" data-i18n="navContact">Contact</a>
+        </nav>
+
+        <button class="lang-toggle" type="button" aria-label="Switch language">AR</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <div>
+            <span class="eyebrow" data-i18n="eyebrow">Naturally rooted in wellness</span>
+            <h1 data-i18n="heroTitle">Medicinal and essential oils for a healthier life</h1>
+            <p class="lead" data-i18n="heroText">
+              Noura Essence is a company devoted to the knowledge, care, and purity behind medicinal and essential oils.
+              We believe wellness begins with trusted, natural ingredients and a deeper understanding of what the body and spirit need.
+            </p>
+
+            <div class="cta-row">
+              <a class="button primary" href="#about" data-i18n="learnMore">Learn more</a>
+              <a class="button secondary" href="#contact" data-i18n="contactUs">Contact us</a>
+            </div>
+
+            <div class="stats">
+              <div class="stat-card">
+                <strong>15+</strong>
+                <span data-i18n="statYears">Years of care</span>
+              </div>
+              <div class="stat-card">
+                <strong>100%</strong>
+                <span data-i18n="statPure">Botanical focus</span>
+              </div>
+              <div class="stat-card">
+                <strong>1:1</strong>
+                <span data-i18n="statTrust">Personal guidance</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="visual-wrap" aria-label="Botanical wellness illustration">
+            <div class="visual-card">
+              <div class="leaf-shape" aria-hidden="true"></div>
+              <div class="floating-panel">
+                <strong data-i18n="panelTitle">Pure plant wisdom</strong>
+                <small data-i18n="panelText">Rooted in tradition, guided by quality and care.</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section">
+        <div class="container">
+          <div class="section-head">
+            <span class="eyebrow" data-i18n="aboutEyebrow">About the company</span>
+            <h2 data-i18n="aboutHeading">A company devoted to natural wellness and knowledge</h2>
+            <p data-i18n="aboutIntro">
+              We create a calm, trustworthy environment where the beauty of medicinal and essential oils is shared with clarity and purpose.
+            </p>
+          </div>
+
+          <div class="feature-grid">
+            <article class="feature-card">
+              <div class="feature-icon" aria-hidden="true">🌿</div>
+              <h3 data-i18n="featureOneTitle">Botanical sourcing</h3>
+              <p data-i18n="featureOneText">We focus on carefully selected plant sources and a respectful process that honors the natural identity of each oil.</p>
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-icon" aria-hidden="true">✨</div>
+              <h3 data-i18n="featureTwoTitle">Traditional wisdom</h3>
+              <p data-i18n="featureTwoText">Our approach blends heritage knowledge with a modern understanding of wellbeing and safe, considered use.</p>
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-icon" aria-hidden="true">🧴</div>
+              <h3 data-i18n="featureThreeTitle">Thoughtful care</h3>
+              <p data-i18n="featureThreeText">Every recommendation is delivered with attention to quality, purpose, and the individual needs of our community.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="founder" class="section">
+        <div class="container story">
+          <div class="portrait-box">
+            <div class="portrait-circle" aria-hidden="true">HA</div>
+            <h3 data-i18n="founderCardName">Hala Al-Harbi</h3>
+            <p data-i18n="founderRole">Founder &amp; Managing Director</p>
+          </div>
+
+          <div class="story-copy">
+            <span class="eyebrow" data-i18n="founderEyebrow">Our founder</span>
+            <h2 data-i18n="founderHeading">The story behind Noura Essence</h2>
+            <p data-i18n="founderTextOne">
+              Behind every thoughtful product and every careful recommendation is a personal journey rooted in wellness, observation, and a deep respect for nature.
+            </p>
+            <p data-i18n="founderTextTwo">
+              Hala Al-Harbi built Noura Essence from a passion for natural care and a conviction that true wellbeing is shaped by knowledge, consistency, and trust.
+              Her leadership reflects a human-centered approach that values education, quality, and the healing power of nature.
+            </p>
+            <div class="quote" data-i18n="founderQuote">
+              “We believe health is nurtured through mindful choices, honest guidance, and a sincere connection to the natural world.”
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="quality" class="section">
+        <div class="container">
+          <div class="section-head">
+            <span class="eyebrow" data-i18n="qualityEyebrow">Our standards</span>
+            <h2 data-i18n="qualityHeading">Why people trust our work</h2>
+          </div>
+
+          <div class="values">
+            <div class="value-item">
+              <span class="num">01</span>
+              <h3 data-i18n="valueTitleOne">Quality first</h3>
+              <p data-i18n="valueTextOne">We prioritize purity, consistency, and careful handling in every aspect of our work.</p>
+            </div>
+            <div class="value-item">
+              <span class="num">02</span>
+              <h3 data-i18n="valueTitleTwo">Natural integrity</h3>
+              <p data-i18n="valueTextTwo">Our focus remains on naturally sourced ingredients and responsible, respectful preparation methods.</p>
+            </div>
+            <div class="value-item">
+              <span class="num">03</span>
+              <h3 data-i18n="valueTitleThree">Education</h3>
+              <p data-i18n="valueTextThree">We help people understand the value of medicinal oils through informed guidance and clarity.</p>
+            </div>
+            <div class="value-item">
+              <span class="num">04</span>
+              <h3 data-i18n="valueTitleFour">Personal care</h3>
+              <p data-i18n="valueTextFour">Each interaction is shaped by sincerity, attention, and a genuine desire to support wellbeing.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="cta-banner">
+            <div>
+              <h3 data-i18n="ctaTitle">A wellness story built on trust</h3>
+              <p data-i18n="ctaText">We are here to guide, inform, and share a deeper understanding of natural remedies and essential oil care.</p>
+            </div>
+            <a class="button secondary" href="#contact" data-i18n="ctaButton">Get in touch</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section">
+        <div class="container contact-grid">
+          <div class="contact-panel">
+            <span class="eyebrow" data-i18n="contactEyebrow">Contact</span>
+            <h3 data-i18n="contactHeading">Let us guide you with care</h3>
+            <p data-i18n="contactText">We welcome conversations about natural wellness, educational guidance, and the thoughtful use of medicinal and essential oils.</p>
+
+            <ul class="contact-list">
+              <li>
+                <span class="contact-tag">✉</span>
+                <div>
+                  <strong data-i18n="emailTitle">Email</strong><br />
+                  <span>hello@nouraessence.com</span>
+                </div>
+              </li>
+              <li>
+                <span class="contact-tag">☎</span>
+                <div>
+                  <strong data-i18n="phoneTitle">Phone</strong><br />
+                  <span>+20 10 09078980</span>
+                </div>
+              </li>
+              <li>
+                <span class="contact-tag">⌂</span>
+                <div>
+                  <strong data-i18n="locationTitle">Location</strong><br />
+                  <span data-i18n="locationText">Riyadh, Kingdom of Saudi Arabia</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="contact-card">
+            <h3 data-i18n="messageTitle">Our promise</h3>
+            <p data-i18n="messageText">To provide thoughtful information, respectful care, and a deeper appreciation of the benefits of medicinal and essential oils in everyday life.</p>
+            <p data-i18n="messageTextTwo">Whether you are seeking education, inspiration, or trustworthy guidance, we are here to support your journey toward natural wellbeing.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <span data-i18n="footerText">© 2026 Noura Essence. Natural wellness, thoughtfully shared.</span>
+        <span data-i18n="footerMeta">Medicinal &amp; Essential Oils</span>
+      </div>
+    </footer>
+
+    <script>
+      const translations = {
+        en: {
+          brandName: 'Noura Essence',
+          brandTag: 'Medicinal & Essential Oils',
+          navAbout: 'About',
+          navFounder: 'Founder',
+          navQuality: 'Quality',
+          navContact: 'Contact',
+          eyebrow: 'Naturally rooted in wellness',
+          heroTitle: 'Medicinal and essential oils for a healthier life',
+          heroText: 'Noura Essence is a company devoted to the knowledge, care, and purity behind medicinal and essential oils. We believe wellness begins with trusted, natural ingredients and a deeper understanding of what the body and spirit need.',
+          learnMore: 'Learn more',
+          contactUs: 'Contact us',
+          statYears: 'Years of care',
+          statPure: 'Botanical focus',
+          statTrust: 'Personal guidance',
+          panelTitle: 'Pure plant wisdom',
+          panelText: 'Rooted in tradition, guided by quality and care.',
+          aboutEyebrow: 'About the company',
+          aboutHeading: 'A company devoted to natural wellness and knowledge',
+          aboutIntro: 'We create a calm, trustworthy environment where the beauty of medicinal and essential oils is shared with clarity and purpose.',
+          featureOneTitle: 'Botanical sourcing',
+          featureOneText: 'We focus on carefully selected plant sources and a respectful process that honors the natural identity of each oil.',
+          featureTwoTitle: 'Traditional wisdom',
+          featureTwoText: 'Our approach blends heritage knowledge with a modern understanding of wellbeing and safe, considered use.',
+          featureThreeTitle: 'Thoughtful care',
+          featureThreeText: 'Every recommendation is delivered with attention to quality, purpose, and the individual needs of our community.',
+          founderEyebrow: 'Our founder',
+          founderHeading: 'The story behind Noura Essence',
+          founderTextOne: 'Behind every thoughtful product and every careful recommendation is a personal journey rooted in wellness, observation, and a deep respect for nature.',
+          founderTextTwo: 'Hala Al-Harbi built Noura Essence from a passion for natural care and a conviction that true wellbeing is shaped by knowledge, consistency, and trust. Her leadership reflects a human-centered approach that values education, quality, and the healing power of nature.',
+          founderQuote: '“We believe health is nurtured through mindful choices, honest guidance, and a sincere connection to the natural world.”',
+          founderCardName: 'Hala Al-Harbi',
+          founderRole: 'Founder & Managing Director',
+          qualityEyebrow: 'Our standards',
+          qualityHeading: 'Why people trust our work',
+          valueTitleOne: 'Quality first',
+          valueTextOne: 'We prioritize purity, consistency, and careful handling in every aspect of our work.',
+          valueTitleTwo: 'Natural integrity',
+          valueTextTwo: 'Our focus remains on naturally sourced ingredients and responsible, respectful preparation methods.',
+          valueTitleThree: 'Education',
+          valueTextThree: 'We help people understand the value of medicinal oils through informed guidance and clarity.',
+          valueTitleFour: 'Personal care',
+          valueTextFour: 'Each interaction is shaped by sincerity, attention, and a genuine desire to support wellbeing.',
+          ctaTitle: 'A wellness story built on trust',
+          ctaText: 'We are here to guide, inform, and share a deeper understanding of natural remedies and essential oil care.',
+          ctaButton: 'Get in touch',
+          contactEyebrow: 'Contact',
+          contactHeading: 'Let us guide you with care',
+          contactText: 'We welcome conversations about natural wellness, educational guidance, and the thoughtful use of medicinal and essential oils.',
+          emailTitle: 'Email',
+          phoneTitle: 'Phone',
+          locationTitle: 'Location',
+          locationText: 'Riyadh, Kingdom of Saudi Arabia',
+          messageTitle: 'Our promise',
+          messageText: 'To provide thoughtful information, respectful care, and a deeper appreciation of the benefits of medicinal and essential oils in everyday life.',
+          messageTextTwo: 'Whether you are seeking education, inspiration, or trustworthy guidance, we are here to support your journey toward natural wellbeing.',
+          footerText: '© 2026 Noura Essence. Natural wellness, thoughtfully shared.',
+          footerMeta: 'Medicinal & Essential Oils'
+        },
+        ar: {
+          brandName: 'نورا إيسنس',
+          brandTag: 'زيوت طبية وعطرية',
+          navAbout: 'من نحن',
+          navFounder: 'المؤسس',
+          navQuality: 'الجودة',
+          navContact: 'تواصل',
+          eyebrow: 'متجذرة في العناية بالصحة',
+          heroTitle: 'زيوت طبية وعطرية لحياة أكثر توازناً',
+          heroText: 'نورا إيسنس شركة مكرسة لمعرفة واهتمام ونقاء الزيوت الطبية والعطرية. نؤمن أن العناية بالصحة تبدأ بمكونات طبيعية موثوقة وفهم أعمق لما يحتاجه الجسم والروح.',
+          learnMore: 'اعرف المزيد',
+          contactUs: 'تواصل معنا',
+          statYears: 'سنوات من العناية',
+          statPure: 'تركيز نباتي',
+          statTrust: 'إرشاد شخصي',
+          panelTitle: 'حكمة النباتات النقية',
+          panelText: 'متجذرة في التقاليد، موجهة بالجودة والاهتمام.',
+          aboutEyebrow: 'عن الشركة',
+          aboutHeading: 'شركة مكرسة للعناية الطبيعية والمعرفة',
+          aboutIntro: 'نخلق بيئة هادئة وموثوقة حيث تُشارك جمال الزيوت الطبية والعطرية بوضوح وهدف.',
+          featureOneTitle: 'تجهيز نباتي',
+          featureOneText: 'نركز على مصادر نباتية منتقاة بعناية وعملية محترمة تكرّم الهوية الطبيعية لكل زيت.',
+          featureTwoTitle: 'حكمة تقليدية',
+          featureTwoText: 'يُجمع نهجنا بين الحكمة التقليدية والفهم الحديث للرفاهية والاستخدام الآمن والمدروس.',
+          featureThreeTitle: 'رعاية مدروسة',
+          featureThreeText: 'يُقدّم كل توصية باهتمام بالجودة والغاية واحتياجات مجتمعنا الفردية.',
+          founderEyebrow: 'مؤسسنا',
+          founderHeading: 'قصة نورا إيسنس',
+          founderTextOne: 'خلف كل فكرة مدروسة وكل توصية دقيقة توجد رحلة شخصية ترتكز على العناية بالصحة والملاحظة واحترام الطبيعة بعمق.',
+          founderTextTwo: 'أسس أيمن الدرشاوي شركة نورا إيسنس من شغف بالرعاية الطبيعية وإيمان بأن العناية الحقيقية تتشكل بالمعرفة والثبات والثقة. وتعكس قيادتها نهجاً يركز على الإنسان ويقدّر التعليم والجودة وقوة الطبيعة في العلاج.',
+          founderQuote: '“نؤمن أن الصحة تُغذّى باختيارات واعية، وإرشاد نزيه، وارتباط صادق بالعالم الطبيعي.”',
+          founderCardName: 'الدكتور أيمن الدرشاوي',
+          founderRole: 'المؤسس والمدير العام',
+          qualityEyebrow: 'معاييرنا',
+          qualityHeading: 'لماذا يثق الناس بعملنا',
+          valueTitleOne: 'الجودة أولاً',
+          valueTextOne: 'نُعطي الأولوية للنقاء والاتساق والمعالجة الدقيقة في كل جانب من جوانب عملنا.',
+          valueTitleTwo: 'نزاهة الطبيعة',
+          valueTextTwo: 'يبقى تركيزنا على المكونات ذات المصدر الطبيعي والطريقة المسؤولة والمحترمة للتحضير.',
+          valueTitleThree: 'التعليم',
+          valueTextThree: 'نساعد الناس على فهم قيمة الزيوت الطبية من خلال توجيه مستنير ووضوح.',
+          valueTitleFour: 'الرعاية الشخصية',
+          valueTextFour: 'يُصاغ كل تفاعل بإخلاص وانتباه ورغبة حقيقية في دعم الرفاهية.',
+          ctaTitle: 'قصة عناية مبنية على الثقة',
+          ctaText: 'نحن هنا لإرشاد الناس ومشاركتهم فهم أعمق للعلاجات الطبيعية ورعاية الزيوت العطرية.',
+          ctaButton: 'تواصل معنا',
+          contactEyebrow: 'تواصل',
+          contactHeading: 'دعنا نرشدك باهتمام',
+          contactText: 'نرحب بالمحادثات حول العناية الطبيعية والإرشاد التعليمي والاستخدام المدروس للزيوت الطبية والعطرية.',
+          emailTitle: 'البريد الإلكتروني',
+          phoneTitle: 'الهاتف',
+          locationTitle: 'الموقع',
+          locationText: 'الرياض، المملكة العربية السعودية',
+          messageTitle: 'وعدنا',
+          messageText: 'تقديم معلومات مدروسة ورعاية محترمة وتقدير أعمق لفوائد الزيوت الطبية والعطرية في الحياة اليومية.',
+          messageTextTwo: 'سواء كنت تبحث عن التعليم أو الإلهام أو الإرشاد الموثوق، فنحن هنا لدعم رحلتك نحو العناية الطبيعية.',
+          footerText: '© 2026 نورا إيسنس. عناية طبيعية، تُشارك بعناية.',
+          footerMeta: 'زيوت طبية وعطرية'
+        }
+      };
+
+      const toggleButton = document.querySelector('.lang-toggle');
+      const elements = document.querySelectorAll('[data-i18n]');
+
+      function applyLanguage(lang) {
+        const map = translations[lang] || translations.ar;
+        elements.forEach((el) => {
+          const key = el.dataset.i18n;
+          if (map[key]) {
+            el.textContent = map[key];
+          }
+        });
+
+        document.documentElement.lang = lang;
+        document.body.classList.toggle('rtl', lang === 'ar');
+        document.body.dir = lang === 'ar' ? 'rtl' : 'ltr';
+        toggleButton.textContent = lang === 'en' ? 'AR' : 'EN';
+        toggleButton.setAttribute('aria-label', lang === 'en' ? 'Switch to Arabic' : 'Switch to English');
+        localStorage.setItem('preferred-lang', lang);
+      }
+
+      const savedLang = localStorage.getItem('preferred-lang') || 'ar';
+      applyLanguage(savedLang);
+
+      toggleButton.addEventListener('click', () => {
+        const nextLang = document.documentElement.lang === 'en' ? 'ar' : 'en';
+        applyLanguage(nextLang);
+      });
+    </script>
+  </body>
+</html>
